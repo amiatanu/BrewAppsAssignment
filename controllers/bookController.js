@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const Book = require("../models/bookModel.js");
-
+const mongoose = require("mongoose");
 // Controller functions for CRUD operations
 
 // Add a new book
@@ -82,19 +82,27 @@ const updateBook = (req, res) => {
 };
 
 // Delete a book by ID
-const deleteBook = (req, res) => {
+const deleteBook = async (req, res) => {
   const bookId = req.params.id;
-  Book.findByIdAndRemove(bookId)
-    .then((deletedBook) => {
-      if (!deletedBook) {
-        return res.status(404).json({ error: "Book not found" });
-      }
-      res.status(204).end();
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json({ error: "Could not delete the book" });
-    });
+
+  // Validate and convert bookId to ObjectId
+  if (!mongoose.Types.ObjectId.isValid(bookId)) {
+    return res.status(400).json({ error: "Invalid book ID" });
+  }
+
+  try {
+    const deletedBook = await Book.findOneAndDelete({ _id: bookId });
+
+    if (!deletedBook) {
+      return res.status(404).json({ error: "Book not found" });
+    }
+
+    // Book successfully deleted
+    res.status(200).json({ message: "Book successfully deleted" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Could not delete the book" });
+  }
 };
 
 module.exports = {
