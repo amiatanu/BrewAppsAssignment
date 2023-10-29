@@ -32,7 +32,7 @@ Create a new book by sending a POST request with the following request body:
  "summary": "This is a sample book summary. It could be a brief description of the book's content and themes."
 }
 
-### Retrieve All Books
+###Retrieve All Books
 
 GET /api/getallbooks
 
