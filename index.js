@@ -16,6 +16,9 @@ mongoose
 app.use(bodyParser.json());
 
 // Use the book routes
+app.use("/", (req, res) => {
+  res.send("Welcome");
+});
 app.use("/api", bookRoutes);
 
 app.listen(port, () => {
