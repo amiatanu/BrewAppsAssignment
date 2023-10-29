@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const Book = require("../models/bookModel");
+const Book = require("../models/bookModel.js");
 
 // Controller functions for CRUD operations
 

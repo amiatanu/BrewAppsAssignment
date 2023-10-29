@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const bookRoutes = require("./routes/bookRoutes");
+const bookRoutes = require("./routes/bookRoutes.js");
 const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
