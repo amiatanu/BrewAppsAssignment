@@ -1,6 +1,7 @@
-# Brew Apps Assignment
+# Brew Apps Assignment Introduction
 
 This project manages a collection of books with a set of API endpoints for creating, retrieving, updating, and deleting book records.
+I have hosted this in Vercel Establishing a CI/CD pipeline between GITHUB and Vercel.MongoDB Atlass is used for the Live Api You can Establish a connection with your Local MONGODB URI also,
 
 ## Getting Started
 
@@ -14,7 +15,9 @@ node index.js
 
 ## API Endpoints
 
-- **Live URL**: [Live URL](https://brew-apps-assignment-five.vercel.app)
+Instruction:Use the Base URL before every Endpoint
+
+- **Base URL**: [Live URL](https://brew-apps-assignment-five.vercel.app) ()
 
 ### Create a New Book
 
