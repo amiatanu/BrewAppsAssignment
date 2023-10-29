@@ -15,7 +15,8 @@ Request Body:
 }
 
 GET api/getallbooks: Retrieve a list of all books.
-GET api/getsinglebook/:id: Get details of a specific book by its ID.(id is object id of the document which you can get by calling the /getallbooks endpoint also)
-PUT api/updatebook/:id: Update a book's details.(id is object id of the document )
+GET api/getsinglebook/:id: Get details of a specific book by its ID.(id is object id of the document which you can get by calling the /getallbooks endpoint also Example id=653e1201121b54a8f8900f1a)
+
+PUT api/updatebook/:id: Update a book's details.(id is object id of the document  )
 DELETE /deletebook/:id: Delete a book from the database.(id is object id of the document)
 
