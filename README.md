@@ -1,23 +1,53 @@
-Install project dependencies:
+# Brew Apps Assignment
+
+This project manages a collection of books with a set of API endpoints for creating, retrieving, updating, and deleting book records.
+
+## Getting Started
+
+1. Install Project Dependencies:
+
 npm i
 
-==========Api Endpoint=========
+2. Start the Project:
 
-Live URL :https://brew-apps-assignment-five.vercel.app
+node index.js
 
-==API Endpoints===
+## API Endpoints
 
-POST api/addbook: ==>Create a new book.
-Request Body:
+- **Live URL**: [Live URL](https://brew-apps-assignment-five.vercel.app)
+
+### Create a New Book
+
+- **POST /api/addbook**
+
+Create a new book by sending a POST request with the following request body:
+
+```json
 {
-"title": "Sample Book1",
-"author": "John Doe",
-"summary": "This is a sample book summary. It could be a brief description of the book's content and themes."
+ "title": "Sample Book1",
+ "author": "John Doe",
+ "summary": "This is a sample book summary. It could be a brief description of the book's content and themes."
 }
 
-GET api/getallbooks:==> Retrieve a list of all books.
+### Retrieve All Books
 
-GET api/getsinglebook/:id: ==>Get details of a specific book by its ID.(id is object id of the document which you can get by calling the /getallbooks endpoint also Example id=653e1201121b54a8f8900f1a)
+GET /api/getallbooks
 
-PUT api/updatebook/:id: ==>Update a book's details.(id is object id of the document )
-DELETE /deletebook/:id: ==>Delete a book from the database.(id is object id of the document)
+Retrieve a list of all books by sending a GET request to this endpoint.
+
+###Get Details of a Specific Book
+
+GET /api/getsinglebook/:id
+
+Retrieve details of a specific book by its ID. Replace :id with the actual object ID of the book. For example: /getsinglebook/653e1201121b54a8f8900f1a.
+
+###Update Book Details
+PUT /api/updatebook/:id
+
+Update a book's details by sending a PUT request to this endpoint. Replace :id with the actual object ID of the book.
+
+###Delete a Book
+DELETE /api/deletebook/:id
+
+Delete a book from the database by sending a DELETE request to this endpoint. Replace :id with the actual object ID of the book.
+```
