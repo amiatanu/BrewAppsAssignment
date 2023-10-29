@@ -6,8 +6,7 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
 const port = process.env.PORT || 3000;
-const dbURI =
-  /* process.env.MONGODB_URI_ATLAS || */ process.env.MONGODB_URI_LOCAL;
+const dbURI = process.env.MONGODB_URI_LOCAL || process.env.MONGODB_URI_ATLAS;
 mongoose.set("strictQuery", false);
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
