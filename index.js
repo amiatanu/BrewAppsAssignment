@@ -17,8 +17,10 @@ app.use(bodyParser.json());
 
 // Use the book routes
 app.get("/", (req, res) => {
-  res.send("Welcome");
+  res.send("Welcome To BrewApps");
 });
+
+// Use the book routes
 app.use("/api", bookRoutes);
 
 app.listen(port, () => {
